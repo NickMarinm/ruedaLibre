@@ -1,0 +1,210 @@
+RUEDA LIBRE - BITACORA
+
+1. ANALISIS HTTP
+
+URL: http://127.0.0.1:5500/index.html
+http | 127.0.0.1 | puerto 5500 | /index.html | GET | 200 OK
+200 OK indica recurso encontrado. /promociones.html devuelve 404 Not Found
+porque no existe.
+
+2. ROLES TECNOLOGICOS
+
+HTML: estructura, por ejemplo, tablas de tarifas.
+CSS: diseno, por ejemplo, colores y tipografia.
+JavaScript: interactividad, por ejemplo, validacion de formularios.
+
+3. RUTAS RELATIVAS
+
+Origen -> destino -> ruta
+index.html -> index.html -> index.html
+index.html -> paginas/tarifas.html -> paginas/tarifas.html
+index.html -> paginas/reservas.html -> paginas/reservas.html
+index.html -> img/portada.jpg -> img/portada.jpg
+index.html -> img/bicicleta.jpg -> img/bicicleta.jpg
+index.html -> img/ruta.jpg -> img/ruta.jpg
+paginas/tarifas.html -> index.html -> ../index.html
+paginas/tarifas.html -> paginas/tarifas.html -> tarifas.html
+paginas/tarifas.html -> paginas/reservas.html -> reservas.html
+paginas/tarifas.html -> img/logo.png -> ../img/logo.png
+paginas/reservas.html -> index.html -> ../index.html
+paginas/reservas.html -> paginas/tarifas.html -> tarifas.html
+paginas/reservas.html -> paginas/reservas.html -> reservas.html
+paginas/reservas.html -> img/logo.png -> ../img/logo.png
+
+4. ESQUEMA SEMANTICO ACTUAL
+
+index.html: header/nav -> main (portada, quienes somos, servicios/article,
+flota/7 article, rutas/3 article, alquiler, ubicacion) -> footer.
+tarifas.html: header/nav -> main (secciones de tarifas y recorridos, aside)
+-> footer.
+reservas.html: header/nav -> main (formulario, aside contacto/horarios)
+-> footer.
+Footer: bloques de marca, contacto y horario. Los div texto-portada,
+grid-flota, grid-rutas y fila-campos agrupan contenido; span badge-nuevo
+identifica la insignia visual sin equivalente semantico.
+
+5. FORMULARIO
+
+Radio permite elegir una bicicleta; select restringe opciones de plan/ruta;
+number con min=1 y max=6 restringe la cantidad.
+
+Campo | dato | esperado | obtenido
+Nombre | Al | minlength=3 lo rechaza | No ejecutado
+Documento | 12AB567 | pattern lo rechaza | No ejecutado
+Celular | 2123456789 | patron exige inicio 3 | No ejecutado
+Celular | 312345678 | patron exige 10 digitos | No ejecutado
+Fecha | 2027-01-01 | max 2026-12-31 la rechaza | No ejecutado
+Cantidad | 0 | min=1 la rechaza | No ejecutado
+Cantidad | 7 | max=6 la rechaza | No ejecutado
+Comentarios | 301 caracteres | maxlength=300 | No ejecutado
+Politicas | sin marcar | required bloquea envio | No ejecutado
+Pruebas interactivas no ejecutadas; resultados pendientes.
+
+6. ACCESIBILIDAD Y CONTRASTE WCAG
+
+Revisado: lang="es", alt descriptivo, enlaces descriptivos, labels asociados
+por for/id, orden de tabulacion, jerarquia de encabezados y tablas accesibles.
+Umbral: 4.5:1 texto normal; 3:1 texto grande.
+Texto/fondo | ratio | clasificacion
+Blanco (#FFFFFF)/Verde Ruta (#1E7A4F) | 5.31:1 | Apta para texto normal
+Blanco (#FFFFFF)/Naranja Pedal (#F39A2B) | 2.22:1 | No apta
+Azul Noche (#14213D)/Naranja Pedal (#F39A2B) | 7.20:1 | Apta para texto normal
+Azul Noche (#14213D)/Crema (#FAF6EF) | 14.82:1 | Apta para texto normal
+Gris Asfalto (#5B6470)/Crema (#FAF6EF) | 5.57:1 | Apta para texto normal
+Verde Ruta (#1E7A4F)/Crema (#FAF6EF) | 4.93:1 | Apta para texto normal
+Naranja Pedal (#F39A2B)/Crema (#FAF6EF) | 2.06:1 | No apta
+Blanco (#FFFFFF)/Azul Noche (#14213D) | 15.98:1 | Apta para texto normal
+Uso aprobado: #14213D/#FAF6EF, #5B6470/#FAF6EF, #1E7A4F/#FAF6EF,
+#FFFFFF/#1E7A4F, #FFFFFF/#14213D y #14213D/#F39A2B.
+
+7. HERENCIA CSS
+
+font-family y color se heredan de body a p; background-color y padding no.
+
+8. ESPECIFICIDAD
+
+#menu a = (0,1,0,1); .activo = (0,0,1,0); #menu a.activo = (0,1,1,1).
+El selector combinado prevalece sin !important.
+
+9. BOX MODEL
+
+Ancho declarado 320px, padding total 32px, bordes 2px:
+content-box = 354px; border-box = 320px exterior (286px de contenido).
+
+10. CIERRE v1.0
+
+HTML, semantica, accesibilidad, formulario nativo y CSS responsivo.
+Futuro: mejorar ajustes por pantalla e interactividad.
+
+11. FLEXBOX
+
+Movil: logo/menu y tres bloques del pie apilados; menu con flex-wrap.
+Desde 768px: logo/menu y los bloques del pie en fila.
+
+12. COLUMNAS DE FLOTA
+
+auto-fit/minmax(16rem,1fr): 1280px = 3; 900px = 3; 500px = 1.
+Calculo de CSS; no medido en DevTools.
+
+13. FLEXBOX VS. GRID
+
+Grid: portada, galeria, reservas 2:1 y fila de campos (columnas alineadas).
+Flexbox: encabezado y pie (distribucion en un eje y cambio de direccion).
+Los div de portada, flota, rutas y fila de campos son contenedores estructurales.
+
+14. REVISION RESPONSIVE
+
+360px: riesgo de desborde de tablas; tabla 100%, celdas compactas.
+768px: menu/logo estrechos; menu flexible y encabezado Bootstrap.
+1280px: riesgo de desborde de imagenes; img-fluid y columnas responsivas.
+Revision estatica; no ejecutada en DevTools.
+
+15. COMPARATIVA CSS GRID / BOOTSTRAP 5.3
+
+Tiempo invertido no medido. CSS inicial: 414 lineas; .grid-flota: 5 lineas.
+Bootstrap flota: row g-4 y col-12 col-sm-6 col-lg-4 col-xl-3 en 7 tarjetas.
+Ventaja: grilla responsiva con menos layout propio. Desventaja: dependencia CDN
+y menos control de tracks.
+
+16. UTILIDADES BOOTSTRAP 5.3
+
+text-bg-success: fondo success y color de texto contrastante.
+d-none d-md-block: oculto; visible como block desde md (768px).
+flex-md-row: direccion en fila desde md (768px).
+g-4: gutters de 1.5rem en la grilla.
+py-2: padding vertical de 0.5rem.
+
+17. CASCADA BOOTSTRAP / STYLES.CSS
+
+Revision estatica, no inspeccionada en DevTools. body/font-family y a/color
+tienen igual especificidad; styles.css carga despues. h1-h3/color y fuente
+tambien se resuelven por orden de carga. No se usa !important propio.
+
+18. COMPARATIVA FINAL v1.5 / v2.0-BETA
+
+styles.css: 414 -> 100 lineas (314 menos). Tiempo no medido. Bootstrap aporta
+grillas y breakpoints; reduce layout propio, pero añade dependencia CDN y
+clases al HTML. Comparacion estatica, sin medicion visual.
+
+19. CIERRE v2.0
+
+Componentes Bootstrap: navbar colapsable, botones unificados, carrusel accesible,
+cards h-100, validacion needs-validation, alerta descartable, modal de politicas
+y Bootstrap Icons.
+
+Marca con variables --bs-*: colores, tipografia, enlaces y botones se personalizan
+sin !important ni modificar Bootstrap. Contraste revisado en estados normal,
+hover y activo de los botones: las combinaciones superan 4.5:1.
+
+Evidencias visuales:
+- Vista escritorio Rueda Libre: [img/capturas/inicio-escritorio.jpeg](img/capturas/inicio-escritorio.jpeg)
+- Vista movil 360 px Rueda Libre: [img/capturas/inicio-escritorio-movil.jpeg](img/capturas/inicio-escritorio-movil.jpeg)
+- Vista escritorio Rueda Nocturna: [img/capturas/nocturna-escritorio.jpeg](img/capturas/nocturna-escritorio.jpeg)
+- Vista movil o modo oscuro Rueda Nocturna: [img/capturas/nocturna-escritorio-movil.jpeg](img/capturas/nocturna-escritorio-movil.jpeg)
+
+20. KIT DE COMPONENTES RUEDA NOCTURNA (BOOTSTRAP 5.3)
+
+Uso uniforme de p-3 y g-4 para espaciado, rounded-3 para bordes,
+variantes btn-primary, btn-naranja y btn-outline-primary, alertas con borde
+lateral y campos accesibles con label, form-control y ayuda asociada.
+
+21. LAYOUT DE PASOS Y ENCABEZADO
+
+Los cuatro pasos usan row y col-12 col-sm-6 col-lg-3: CSS Grid de Bootstrap
+ordena las tarjetas en dos dimensiones y cambia de 1 a 2 y 4 columnas.
+Encabezado y pie usan Flexbox porque distribuyen bloques en un eje y cambian
+de columna a fila desde md.
+
+22. MATRIZ RESPONSIVE MOBILE-FIRST
+
+Matriz estimada desde los breakpoints de Bootstrap; no es una medición en DevTools.
+Ancho | Riesgo inicial | Encabezado | Rutas | Pasos | Pie
+360 px | Navegación y tarjetas estrechas | Enlaces ocultos, CTA visible | 1 columna | 1 columna | Apilado
+768 px | Tercera ruta pasa a otra fila | Enlaces visibles | 2 columnas | 2 columnas | En fila
+1024 px | Cuatro pasos requieren ancho | En fila | 3 columnas | 4 columnas | En fila
+1280 px | Contenido podría estirarse | Contenido centrado | 3 columnas | 4 columnas | En fila
+
+23. CONTRASTE DEL MODO OSCURO (WCAG)
+
+Verde Ruta #1E7A4F sobre Azul Noche #14213D da aproximadamente 3:1,
+insuficiente para texto normal. Amarillo Farol #FFD166 sobre Azul Noche supera
+11:1 y Crema #FAF6EF sobre Azul Noche supera 14:1. En modo oscuro, enlaces y
+acentos usan Amarillo Farol; los botones farol usan texto Azul Noche.
+
+24. BOOTSTRAP 5.3 Y TAILWIND CSS
+
+Curva de aprendizaje: Bootstrap ofrece componentes y convenciones listas;
+Tailwind requiere aprender y combinar utilidades.
+Personalización: Bootstrap usa variables y componentes; Tailwind facilita
+ajustes directos mediante utilidades y configuración del tema.
+Tamaño final: el CDN de Bootstrap carga el CSS compartido aunque no se use todo;
+Tailwind puede generar CSS reducido mediante compilación y eliminación de clases
+no utilizadas.
+Casos de uso: Bootstrap agiliza interfaces con componentes consistentes; Tailwind
+favorece diseños a medida con un proceso de compilación. Se mantiene Bootstrap
+5.3 para conservar la implementación CDN existente y evitar añadir Node.js/CLI.
+
+25. VALIDACION W3C
+
+paginas/reservas.html y nocturna/index.html fueron verificadas con el validador
+oficial del W3C sin errores.

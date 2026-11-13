@@ -1,0 +1,240 @@
+:root {
+    --verde-ruta: #1E7A4F;
+    --naranja-pedal: #F39A2B;
+    --azul-noche: #14213D;
+    --crema: #FAF6EF;
+    --gris-asfalto: #5B6470;
+    --amarillo-farol: #FFD166;
+    --fuente-titulos: 'Montserrat', sans-serif;
+    --fuente-texto: 'Open Sans', sans-serif;
+    --bs-primary: var(--verde-ruta);
+    --bs-primary-rgb: 30, 122, 79;
+    --bs-body-font-family: var(--fuente-texto);
+    --bs-body-bg: var(--crema);
+    --bs-body-color: var(--azul-noche);
+    --bs-link-color: var(--verde-ruta);
+    --bs-link-color-rgb: 30, 122, 79;
+    --bs-link-hover-color: #145A39;
+    --bs-link-hover-color-rgb: 20, 90, 57;
+    --bs-border-radius: 0.5rem;
+}
+
+body {
+    background-color: var(--bs-body-bg);
+    color: var(--bs-body-color);
+    font-family: var(--bs-body-font-family);
+}
+
+h1,
+h2,
+h3 {
+    color: var(--bs-body-color);
+    font-family: var(--fuente-titulos);
+    font-weight: 700;
+}
+
+a:focus-visible {
+    outline: 3px solid var(--bs-body-color);
+    outline-offset: 3px;
+}
+
+.btn-primary {
+    --bs-btn-color: #FFFFFF;
+    --bs-btn-bg: #1E7A4F;
+    --bs-btn-border-color: #1E7A4F;
+    --bs-btn-hover-color: #FFFFFF;
+    --bs-btn-hover-bg: #165E3C;
+    --bs-btn-hover-border-color: #165E3C;
+    --bs-btn-active-color: #FFFFFF;
+    --bs-btn-active-bg: #165E3C;
+    --bs-btn-active-border-color: #165E3C;
+}
+
+.btn-naranja {
+    --bs-btn-color: #14213D;
+    --bs-btn-bg: #F39A2B;
+    --bs-btn-border-color: #F39A2B;
+    --bs-btn-hover-color: #14213D;
+    --bs-btn-hover-bg: #E58B1C;
+    --bs-btn-hover-border-color: #E58B1C;
+    --bs-btn-active-color: #14213D;
+    --bs-btn-active-bg: #D98215;
+    --bs-btn-active-border-color: #D98215;
+}
+
+.btn-farol {
+    --bs-btn-color: var(--azul-noche);
+    --bs-btn-bg: var(--amarillo-farol);
+    --bs-btn-border-color: var(--amarillo-farol);
+    --bs-btn-hover-color: var(--azul-noche);
+    --bs-btn-hover-bg: #F3C65A;
+    --bs-btn-hover-border-color: #F3C65A;
+    --bs-btn-active-color: var(--azul-noche);
+    --bs-btn-active-bg: #E8B94F;
+    --bs-btn-active-border-color: #E8B94F;
+}
+
+.plan-destacado {
+    background-color: #FFF6DF;
+}
+
+.seccion-titulo {
+    padding-bottom: 0.35rem;
+    border-bottom: 0.2rem solid var(--bs-primary);
+    margin-bottom: 1rem;
+}
+
+.navbar-marca,
+.footer-marca {
+    background-color: var(--azul-noche);
+    color: var(--crema);
+}
+
+.navbar-marca .navbar-brand,
+.navbar-marca .nav-link,
+.footer-marca a {
+    color: var(--crema);
+}
+
+.navbar-marca .navbar-brand .bi,
+.footer-marca .bi {
+    color: var(--naranja-pedal);
+}
+
+.navbar-marca .nav-link:hover,
+.navbar-marca .nav-link:focus-visible {
+    color: var(--naranja-pedal);
+}
+
+.navbar-marca .nav-link.active {
+    color: var(--naranja-pedal);
+}
+
+.navbar-marca a:focus-visible,
+.footer-marca a:focus-visible {
+    outline-color: var(--crema);
+}
+
+.footer-marca h2 {
+    color: var(--naranja-pedal);
+}
+
+.footer-marca a:hover,
+.footer-marca a:focus-visible {
+    color: var(--naranja-pedal);
+}
+
+.hero-nocturna {
+    background-color: var(--azul-noche);
+    color: var(--crema);
+}
+
+.hero-portada {
+    padding: 1rem;
+    border-radius: var(--bs-border-radius);
+    background-color: #FFFFFF;
+}
+
+.hero-portada .carousel-item img {
+    max-height: 32rem;
+    object-fit: cover;
+}
+
+table.table.tabla-marca {
+    --bs-table-color: #14213D;
+    --bs-table-border-color: #5B6470;
+}
+
+table.table.tabla-marca thead th {
+    background-color: #14213D;
+    color: #FFFFFF;
+}
+
+.badge-nuevo {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    padding: 0.25rem 0.625rem;
+    border-radius: 999px;
+    background-color: #1E7A4F;
+    color: #FFFFFF;
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+.btn-whatsapp {
+    position: fixed;
+    z-index: 1030;
+    right: 1rem;
+    bottom: 1rem;
+    border-radius: 999px;
+}
+
+.card-nocturna:hover {
+    box-shadow: 0 0.5rem 1rem rgba(20, 33, 61, 0.2);
+    transition: box-shadow 0.2s ease;
+}
+
+@media (prefers-color-scheme: dark) {
+    body.nocturna {
+        --bs-body-bg: var(--azul-noche);
+        --bs-body-color: var(--crema);
+        --bs-link-color: var(--amarillo-farol);
+        --bs-link-color-rgb: 255, 209, 102;
+        --bs-link-hover-color: #FFE09A;
+        --bs-link-hover-color-rgb: 255, 224, 154;
+        background-color: var(--bs-body-bg);
+        color: var(--bs-body-color);
+    }
+
+    body.nocturna a,
+    body.nocturna .navbar-marca .navbar-brand,
+    body.nocturna .navbar-marca .nav-link,
+    body.nocturna .footer-marca a {
+        color: var(--amarillo-farol);
+    }
+
+    body.nocturna .navbar-marca,
+    body.nocturna .footer-marca,
+    body.nocturna .hero-nocturna {
+        background-color: var(--azul-noche);
+        color: var(--crema);
+    }
+
+    body.nocturna .navbar-marca .navbar-brand .bi,
+    body.nocturna .footer-marca .bi,
+    body.nocturna .footer-marca h2,
+    body.nocturna .seccion-titulo {
+        color: var(--amarillo-farol);
+    }
+
+    body.nocturna .seccion-titulo {
+        border-color: var(--amarillo-farol);
+    }
+
+    body.nocturna .card {
+        --bs-card-bg: #1D2B47;
+        --bs-card-color: var(--crema);
+        --bs-card-border-color: var(--gris-asfalto);
+        background-color: var(--bs-card-bg);
+        color: var(--bs-card-color);
+        border-color: var(--bs-card-border-color);
+    }
+
+    body.nocturna .plan-destacado {
+        --bs-card-bg: #26395A;
+        background-color: var(--bs-card-bg);
+    }
+
+    body.nocturna .btn-outline-primary {
+        --bs-btn-color: var(--amarillo-farol);
+        --bs-btn-border-color: var(--amarillo-farol);
+        --bs-btn-hover-color: var(--azul-noche);
+        --bs-btn-hover-bg: var(--amarillo-farol);
+        --bs-btn-hover-border-color: var(--amarillo-farol);
+        --bs-btn-active-color: var(--azul-noche);
+        --bs-btn-active-bg: var(--amarillo-farol);
+        --bs-btn-active-border-color: var(--amarillo-farol);
+    }
+
+}

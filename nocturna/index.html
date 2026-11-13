@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Descubre las rutas nocturnas en bicicleta de Rueda Libre por Medellín.">
+    <title>Rueda Nocturna | Rutas en bicicleta</title>
+    <script>
+        (() => {
+            const preferenciaOscura = window.matchMedia('(prefers-color-scheme: dark)')
+            const aplicarTema = () => document.documentElement.setAttribute('data-bs-theme', preferenciaOscura.matches ? 'dark' : 'light')
+            aplicarTema()
+            preferenciaOscura.addEventListener('change', aplicarTema)
+        })()
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body class="nocturna">
+    <header>
+        <nav class="navbar navbar-expand-md navbar-marca py-3">
+            <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
+                <a class="navbar-brand fw-bold" href="../index.html">Rueda Libre · Nocturna</a>
+                <ul class="navbar-nav d-none d-md-flex flex-row gap-3">
+                    <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#rutas">Rutas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#como-funciona">Cómo funciona</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#inscripcion">Inscripción</a></li>
+                </ul>
+                <div class="d-flex flex-column flex-sm-row gap-2">
+                    <a class="btn btn-farol" href="#inscripcion">Inscríbete</a>
+                    <a class="btn btn-outline-light" href="../paginas/reservas.html">Reserva tu bici</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="inicio">
+            <div class="container py-4 py-lg-5">
+                <div class="hero-nocturna rounded-3 p-4 p-lg-5">
+                    <span class="badge text-bg-warning mb-3">Nuevo · Jueves a sábado</span>
+                    <h1 class="display-5 display-lg-3 fw-bold text-white">Rueda Nocturna</h1>
+                    <p class="lead text-white">Descubre Medellín en bici cuando se encienden las luces</p>
+                    <div class="d-flex flex-column flex-sm-row gap-3 mb-4">
+                        <div class="p-3 bg-light text-dark rounded-3">
+                            <span class="d-block small">Rutas disponibles</span>
+                            <strong class="fs-4">3 rutas</strong>
+                        </div>
+                        <div class="p-3 bg-light text-dark rounded-3">
+                            <span class="d-block small">Precio inicial</span>
+                            <strong class="fs-4">Desde $55.000</strong>
+                        </div>
+                    </div>
+                    <a class="btn btn-farol btn-lg" href="#inscripcion">Inscríbete</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="rutas">
+            <div class="container py-4 py-lg-5">
+                <h2 class="seccion-titulo">Rutas</h2>
+                <div class="row g-4">
+                    <div class="col-12 col-sm-6 col-lg-4">
+                        <article class="card h-100 shadow-sm rounded-3 border-0 card-nocturna">
+                            <img src="../img/ruta.jpg" class="card-img-top object-fit-cover" alt="Ruta nocturna Luces del Centro" width="800" height="280">
+                            <div class="card-body d-flex flex-column">
+                                <h3 class="card-title">Luces del Centro</h3>
+                                <p><span class="badge text-bg-success">Fácil</span> <span class="ms-2 fw-bold">Nivel: Fácil</span></p>
+                                <dl class="row g-3">
+                                    <div class="col-6"><dt class="text-body-secondary small">Distancia</dt><dd class="fw-bold">10 km</dd></div>
+                                    <div class="col-6"><dt class="text-body-secondary small">Duración</dt><dd class="fw-bold">2 h</dd></div>
+                                    <div class="col-12"><dt class="text-body-secondary small">Encuentro</dt><dd class="fw-bold">Sede Rueda Libre</dd></div>
+                                </dl>
+                                <p class="card-text">Incluye bicicleta, casco, luces LED, chaleco reflectivo y guía.</p>
+                                <div class="mb-3"><span class="text-body-secondary small">Precio</span><p class="fs-4 fw-bold mb-0">$55.000</p></div>
+                                <a class="btn btn-primary mt-auto" href="../paginas/reservas.html">Reservar ruta</a>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-4">
+                        <article class="card h-100 shadow-sm rounded-3 border-0 card-nocturna">
+                            <img src="../img/ruta.jpg" class="card-img-top object-fit-cover" alt="Ruta nocturna Miradores de la Ciudad" width="800" height="280">
+                            <div class="card-body d-flex flex-column">
+                                <h3 class="card-title">Miradores de la Ciudad</h3>
+                                <p><span class="badge text-bg-warning">Medio</span> <span class="ms-2 fw-bold">Nivel: Medio</span></p>
+                                <dl class="row g-3">
+                                    <div class="col-6"><dt class="text-body-secondary small">Distancia</dt><dd class="fw-bold">16 km</dd></div>
+                                    <div class="col-6"><dt class="text-body-secondary small">Duración</dt><dd class="fw-bold">3 h</dd></div>
+                                    <div class="col-12"><dt class="text-body-secondary small">Encuentro</dt><dd class="fw-bold">Sede Rueda Libre</dd></div>
+                                </dl>
+                                <p class="card-text">Incluye bicicleta, casco, luces LED, chaleco reflectivo y guía.</p>
+                                <div class="mb-3"><span class="text-body-secondary small">Precio</span><p class="fs-4 fw-bold mb-0">$75.000</p></div>
+                                <a class="btn btn-primary mt-auto" href="../paginas/reservas.html">Reservar ruta</a>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-4">
+                        <article class="card h-100 shadow-sm rounded-3 border-0 card-nocturna">
+                            <img src="../img/ruta.jpg" class="card-img-top object-fit-cover" alt="Ruta nocturna Luna en Las Palmas" width="800" height="280">
+                            <div class="card-body d-flex flex-column">
+                                <h3 class="card-title">Luna en Las Palmas</h3>
+                                <p><span class="badge text-bg-danger">Difícil</span> <span class="ms-2 fw-bold">Nivel: Difícil</span></p>
+                                <dl class="row g-3">
+                                    <div class="col-6"><dt class="text-body-secondary small">Distancia</dt><dd class="fw-bold">22 km</dd></div>
+                                    <div class="col-6"><dt class="text-body-secondary small">Duración</dt><dd class="fw-bold">3,5 h</dd></div>
+                                    <div class="col-12"><dt class="text-body-secondary small">Encuentro</dt><dd class="fw-bold">Sede Rueda Libre</dd></div>
+                                </dl>
+                                <p class="card-text">Incluye bicicleta, casco, luces LED, chaleco reflectivo y guía.</p>
+                                <div class="mb-3"><span class="text-body-secondary small">Precio</span><p class="fs-4 fw-bold mb-0">$95.000</p></div>
+                                <a class="btn btn-primary mt-auto" href="../paginas/reservas.html">Reservar ruta</a>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="planes">
+            <div class="container py-4 py-lg-5">
+                <h2 class="seccion-titulo">Planes Rueda Nocturna</h2>
+                <div class="row g-4">
+                    <div class="col-12 col-lg-4">
+                        <article class="card h-100 d-flex flex-column justify-content-between p-3">
+                            <h3 class="card-title">Plan Individual</h3>
+                            <p class="fs-4 fw-bold">$55.000 por persona</p>
+                            <ul class="d-flex flex-column gap-2">
+                                <li>Bicicleta y casco</li>
+                                <li>Luces LED y chaleco</li>
+                                <li>Guía certificado</li>
+                                <li>Hidratación</li>
+                            </ul>
+                            <a class="mt-auto btn btn-outline-primary" href="#inscripcion">Elegir plan</a>
+                        </article>
+                    </div>
+                    <div class="col-12 col-lg-4">
+                        <article class="card h-100 d-flex flex-column justify-content-between p-3 border-2 border-warning shadow plan-destacado">
+                            <span class="badge text-bg-warning mb-2 align-self-start">Más elegido</span>
+                            <h3 class="card-title">Plan Pareja</h3>
+                            <p class="fs-4 fw-bold">$99.000 las dos personas</p>
+                            <ul class="d-flex flex-column gap-2">
+                                <li>Todo lo del plan Individual</li>
+                                <li>Foto del recorrido</li>
+                                <li>Snack para dos</li>
+                                <li>Prioridad en la ruta</li>
+                            </ul>
+                            <a class="mt-auto btn btn-farol" href="#inscripcion">Elegir plan Pareja</a>
+                        </article>
+                    </div>
+                    <div class="col-12 col-lg-4">
+                        <article class="card h-100 d-flex flex-column justify-content-between p-3">
+                            <h3 class="card-title">Plan Grupo (4 a 8)</h3>
+                            <p class="fs-4 fw-bold">$45.000 por persona</p>
+                            <ul class="d-flex flex-column gap-2">
+                                <li>Todo lo del plan Individual</li>
+                                <li>Guía exclusivo</li>
+                                <li>Horario a elección</li>
+                                <li>Fotos del grupo</li>
+                            </ul>
+                            <a class="mt-auto btn btn-outline-primary" href="#inscripcion">Elegir plan</a>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="como-funciona">
+            <div class="container py-4 py-lg-5">
+                <h2 class="seccion-titulo">¿Cómo funciona?</h2>
+                <div class="row g-4">
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <article class="h-100 rounded-3 bg-body-tertiary p-3">
+                            <h3 class="h5 fw-bold">1. Elige tu ruta</h3>
+                            <p class="mb-0">Selecciona el nivel y horario que mejor se adapte a tu ritmo.</p>
+                        </article>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <article class="h-100 rounded-3 bg-body-tertiary p-3">
+                            <h3 class="h5 fw-bold">2. Inscríbete</h3>
+                            <p class="mb-0">Reserva tu cupo en línea con tus datos básicos.</p>
+                        </article>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <article class="h-100 rounded-3 bg-body-tertiary p-3">
+                            <h3 class="h5 fw-bold">3. Recoge tu equipo</h3>
+                            <p class="mb-0">Te entregamos bicicleta revisada, casco, luces LED y chaleco reflectivo en nuestra sede.</p>
+                        </article>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <article class="h-100 rounded-3 bg-body-tertiary p-3">
+                            <h3 class="h5 fw-bold">4. Rueda</h3>
+                            <p class="mb-0">Disfruta el recorrido nocturno guiado por Medellín.</p>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="inscripcion">
+            <div class="container py-4 py-lg-5">
+                <div class="rounded-3 bg-body-tertiary p-4">
+                    <h2 class="seccion-titulo">Inscripción nocturna</h2>
+                    <div class="alert alert-info" role="status">Cupos limitados para cada salida nocturna. Inscríbete para reservar tu lugar.</div>
+                    <form action="#" method="post" class="needs-validation" novalidate>
+                        <fieldset class="mb-4">
+                            <legend class="fs-5">Tus datos</legend>
+                            <div class="row g-3">
+                                <div class="col-12 col-md-6">
+                                    <label for="noc-nombre" class="form-label">Nombre completo</label>
+                                    <input type="text" class="form-control rounded-3" id="noc-nombre" name="nombre" required minlength="3" aria-describedby="noc-nombre-feedback">
+                                    <div class="invalid-feedback" id="noc-nombre-feedback">Ingresa tu nombre completo (mínimo 3 caracteres).</div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <label for="noc-correo" class="form-label">Correo electrónico</label>
+                                    <input type="email" class="form-control rounded-3" id="noc-correo" name="correo" required aria-describedby="noc-correo-feedback">
+                                    <div class="invalid-feedback" id="noc-correo-feedback">Ingresa una dirección de correo electrónico válida.</div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <label for="noc-celular" class="form-label">Celular</label>
+                                    <input type="tel" class="form-control rounded-3" id="noc-celular" name="celular" required pattern="3[0-9]{9}" title="Ingresa un celular válido de 10 dígitos que inicie por 3." aria-describedby="noc-celular-feedback">
+                                    <div class="invalid-feedback" id="noc-celular-feedback">Ingresa un celular de 10 dígitos que empiece por 3.</div>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <fieldset class="mb-4">
+                            <legend class="fs-5">Tu salida</legend>
+                            <div class="row g-3">
+                                <div class="col-12 col-md-6">
+                                    <label for="noc-ruta" class="form-label">Ruta nocturna</label>
+                                    <select class="form-select" id="noc-ruta" name="ruta" required aria-describedby="noc-ruta-feedback">
+                                        <option value="" disabled selected>Selecciona una ruta</option>
+                                        <option value="luces-centro">Luces del Centro ($55.000)</option>
+                                        <option value="miradores-ciudad">Miradores de la Ciudad ($75.000)</option>
+                                        <option value="luna-palmas">Luna en Las Palmas ($95.000)</option>
+                                    </select>
+                                    <div class="invalid-feedback" id="noc-ruta-feedback">Selecciona una ruta nocturna.</div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <label for="noc-dia" class="form-label">Día de salida</label>
+                                    <select class="form-select" id="noc-dia" name="dia" required aria-describedby="noc-dia-feedback">
+                                        <option value="" disabled selected>Selecciona un día</option>
+                                        <option value="jueves">Jueves</option>
+                                        <option value="viernes">Viernes</option>
+                                        <option value="sabado">Sábado</option>
+                                    </select>
+                                    <div class="invalid-feedback" id="noc-dia-feedback">Selecciona Jueves, Viernes o Sábado.</div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <label for="noc-acompanantes" class="form-label">Número de acompañantes</label>
+                                    <input type="number" class="form-control rounded-3" id="noc-acompanantes" name="acompanantes" required min="0" max="3" value="0" aria-describedby="noc-acompanantes-feedback">
+                                    <div class="invalid-feedback" id="noc-acompanantes-feedback">Ingresa un número de acompañantes entre 0 y 3.</div>
+                                </div>
+                                <fieldset class="col-12 col-md-6">
+                                    <legend class="fs-6">Nivel de experiencia</legend>
+                                    <div class="form-check">
+                                        <input type="radio" class="form-check-input" id="noc-experiencia-principiante" name="experiencia" value="principiante" required aria-describedby="noc-experiencia-feedback">
+                                        <label class="form-check-label" for="noc-experiencia-principiante">Principiante</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input type="radio" class="form-check-input" id="noc-experiencia-intermedio" name="experiencia" value="intermedio" required aria-describedby="noc-experiencia-feedback">
+                                        <label class="form-check-label" for="noc-experiencia-intermedio">Intermedio</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input type="radio" class="form-check-input" id="noc-experiencia-avanzado" name="experiencia" value="avanzado" required aria-describedby="noc-experiencia-feedback">
+                                        <label class="form-check-label" for="noc-experiencia-avanzado">Avanzado</label>
+                                        <div class="invalid-feedback" id="noc-experiencia-feedback">Selecciona tu nivel de experiencia.</div>
+                                    </div>
+                                </fieldset>
+                                <fieldset class="col-12 col-md-6">
+                                    <legend class="fs-6">¿Tienes bicicleta propia?</legend>
+                                    <div class="form-check">
+                                        <input type="radio" class="form-check-input" id="noc-bici-si" name="bici_propia" value="si" required aria-describedby="noc-bici-feedback">
+                                        <label class="form-check-label" for="noc-bici-si">Sí</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input type="radio" class="form-check-input" id="noc-bici-no" name="bici_propia" value="no" required aria-describedby="noc-bici-feedback">
+                                        <label class="form-check-label" for="noc-bici-no">No</label>
+                                        <div class="invalid-feedback" id="noc-bici-feedback">Indica si tienes bicicleta propia.</div>
+                                    </div>
+                                </fieldset>
+                            </div>
+                        </fieldset>
+
+                        <fieldset class="mb-4">
+                            <legend class="fs-5">Condiciones</legend>
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="noc-condiciones" name="condiciones" required aria-describedby="noc-condiciones-feedback">
+                                <label class="form-check-label" for="noc-condiciones">Acepto las condiciones de la ruta nocturna.</label>
+                                <div class="invalid-feedback" id="noc-condiciones-feedback">Debes aceptar las condiciones para continuar.</div>
+                            </div>
+                        </fieldset>
+                        <button type="submit" class="btn btn-farol btn-lg">Confirmar inscripción nocturna</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer-marca py-4">
+        <div class="container d-flex flex-column flex-md-row justify-content-between align-items-start gap-4">
+            <div>
+                <h2 class="h5">Rueda Libre · Nocturna</h2>
+                <p class="mb-0">Recorridos guiados en bicicleta por Medellín.</p>
+                <p class="mb-0">© 2026 Rueda Libre</p>
+            </div>
+            <div>
+                <h2 class="h6">Contacto</h2>
+                <p class="mb-0"><a href="mailto:hola@ruedalibre.example">hola@ruedalibre.example</a></p>
+            </div>
+            <div>
+                <h2 class="h6">Horario nocturno</h2>
+                <p class="mb-0">Jueves a sábado</p>
+                <p class="mb-0">Consulta horarios disponibles al inscribirte.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script>
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (() => {
+            'use strict'
+
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            const forms = document.querySelectorAll('.needs-validation')
+
+            // Loop over them and prevent submission
+            Array.from(forms).forEach(form => {
+                form.addEventListener('submit', event => {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
+
+                    form.classList.add('was-validated')
+                }, false)
+            })
+        })()
+    </script>
+</body>
+</html>

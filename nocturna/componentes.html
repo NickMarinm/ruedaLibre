@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Componentes Bootstrap 5.3 de la campaña Rueda Nocturna.">
+    <title>Componentes | Rueda Nocturna</title>
+    <script>
+        (() => {
+            const preferenciaOscura = window.matchMedia('(prefers-color-scheme: dark)')
+            const aplicarTema = () => document.documentElement.setAttribute('data-bs-theme', preferenciaOscura.matches ? 'dark' : 'light')
+            aplicarTema()
+            preferenciaOscura.addEventListener('change', aplicarTema)
+        })()
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body class="nocturna">
+    <main class="container py-5">
+        <h1 class="mb-4">Kit de componentes Rueda Nocturna</h1>
+
+        <section class="mb-5">
+            <h2 class="seccion-titulo">Botones</h2>
+            <div class="d-flex flex-wrap gap-3">
+                <a class="btn btn-primary rounded-3" href="../paginas/reservas.html">Principal</a>
+                <a class="btn btn-farol rounded-3" href="../paginas/reservas.html">Secundario</a>
+                <a class="btn btn-outline-primary rounded-3" href="../paginas/reservas.html">Contorno</a>
+            </div>
+        </section>
+
+        <section class="mb-5">
+            <h2 class="seccion-titulo">Card de ruta</h2>
+            <div class="row">
+                <div class="col-12 col-md-6 col-lg-4">
+                    <article class="card h-100 shadow-sm rounded-3 border-0 card-nocturna">
+                        <img src="../img/ruta.jpg" class="card-img-top object-fit-cover" alt="Ruta nocturna Luces del Centro" width="800" height="280">
+                        <div class="card-body d-flex flex-column">
+                            <h3 class="card-title">Luces del Centro</h3>
+                            <p><span class="badge text-bg-success">Fácil</span> <span class="ms-2 fw-bold">Nivel: Fácil</span></p>
+                            <dl class="row g-3">
+                                <div class="col-6"><dt class="text-body-secondary small">Distancia</dt><dd class="fw-bold">10 km</dd></div>
+                                <div class="col-6"><dt class="text-body-secondary small">Duración</dt><dd class="fw-bold">2 h</dd></div>
+                                <div class="col-12"><dt class="text-body-secondary small">Encuentro</dt><dd class="fw-bold">Sede Rueda Libre</dd></div>
+                            </dl>
+                            <p class="card-text">Incluye bicicleta, casco, luces LED, chaleco reflectivo y guía.</p>
+                            <p class="text-body-secondary small mb-1">Precio</p>
+                            <p class="fs-4 fw-bold">$55.000</p>
+                            <a class="btn btn-primary mt-auto" href="../paginas/reservas.html">Reservar ruta</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-5">
+            <h2 class="seccion-titulo">Alertas</h2>
+            <div class="alert alert-info border-start border-4 border-info rounded-3 p-3 mb-3" role="alert">
+                <h3 class="h5 fw-bold">Información</h3>
+                <p class="mb-0">Llega a la sede unos minutos antes de iniciar la ruta.</p>
+            </div>
+            <div class="alert alert-success border-start border-4 border-success rounded-3 p-3 mb-3" role="status">
+                <h3 class="h5 fw-bold">Reserva confirmada</h3>
+                <p class="mb-0">Tu bicicleta y equipo estarán listos para la salida.</p>
+            </div>
+            <div class="alert alert-warning border-start border-4 border-warning rounded-3 p-3 mb-3" role="alert">
+                <h3 class="h5 fw-bold">Importante</h3>
+                <p class="mb-0">Trae tu documento de identidad original.</p>
+            </div>
+        </section>
+
+        <section class="mb-5">
+            <h2 class="seccion-titulo">Campos de formulario</h2>
+            <div class="row g-3">
+                <div class="col-12 col-md-6">
+                    <label for="correo" class="form-label">Correo electrónico</label>
+                    <input type="email" class="form-control rounded-3" id="correo" placeholder="nombre@ejemplo.com" aria-describedby="correo-ayuda">
+                    <div class="form-text" id="correo-ayuda">Usaremos este correo para confirmar tu reserva.</div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <label for="celular" class="form-label">Celular</label>
+                    <input type="tel" class="form-control rounded-3" id="celular" placeholder="300 123 4567" aria-describedby="celular-ayuda">
+                    <div class="form-text" id="celular-ayuda">Ingresa un número de contacto disponible.</div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
