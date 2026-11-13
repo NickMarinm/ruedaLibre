@@ -13,7 +13,10 @@ Sitio web estático para **Rueda Libre**, un servicio de alquiler de bicicletas 
 | [`nocturna/componentes.html`](./nocturna/componentes.html) | Muestra de botones, tarjeta, alertas y campos. |
 | [`nocturna/prototipo.html`](./nocturna/prototipo.html) | Prototipo del hero de campaña. |
 
-**GitHub Pages:** publicación pendiente de confirmar. Agregar aquí los enlaces públicos cuando se habilite el despliegue.
+**GitHub Pages:** publicación completada.
+
+- Sitio principal Rueda Libre v2.0: [https://nickmarinm.github.io/ruedaLibre/](https://nickmarinm.github.io/ruedaLibre/)
+- Landing Rueda Nocturna: [https://nickmarinm.github.io/ruedaLibre/nocturna/](https://nickmarinm.github.io/ruedaLibre/nocturna/)
 
 ## Estructura
 

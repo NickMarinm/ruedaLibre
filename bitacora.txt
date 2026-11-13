@@ -208,3 +208,9 @@ favorece diseños a medida con un proceso de compilación. Se mantiene Bootstrap
 
 paginas/reservas.html y nocturna/index.html fueron verificadas con el validador
 oficial del W3C sin errores.
+
+26. PUBLICACION EN GITHUB PAGES
+
+Sitio principal Rueda Libre v2.0: https://nickmarinm.github.io/ruedaLibre/
+Landing Rueda Nocturna: https://nickmarinm.github.io/ruedaLibre/nocturna/
+Estado: completada.
